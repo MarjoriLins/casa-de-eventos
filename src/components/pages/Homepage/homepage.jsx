@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Container, Title, Slogan } from "./homepage.styles";
+
 import Cabecalho from "../../Cabecalho/cabecalho";
 import Rodape from "../../Rodape/rodape";
 
@@ -6,11 +7,10 @@ function Homepage() {
   return (
     <>
       <Cabecalho />
-      <div className="conteudo">
-        <h1>Bem vindo a Casa de Eventos!</h1>
-        <Link to="/contato">Ir para Contato</Link>
-        <Link to="/login">Voltar para Login</Link>
-      </div>
+      <Container>
+        <Title>Bem vindo a Casa de Eventos!</Title>
+        <Slogan>Essa é a Casa de Festas que realiza sonhos.</Slogan>
+      </Container>
       <Rodape />
     </>
   );
