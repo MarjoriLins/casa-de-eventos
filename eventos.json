@@ -27,14 +27,14 @@
   ],
   "usuarios": [
     {
-      "nome": "Sandro",
-      "email": "sandro@ig.com",
-      "password": "123456"
+      "nome": "Teste",
+      "email": "teste@ig.com",
+      "senha": "112233"
     },
     {
       "nome": "João",
       "email": "joao@ig.com",
-      "password": "123456"
+      "senha": "123456"
     }
   ]
 }
