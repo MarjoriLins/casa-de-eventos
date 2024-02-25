@@ -5,8 +5,7 @@
       "data": "12/02/2024",
       "horario": "20:00",
       "preco": 0,
-      "link": "https://www.instagram.com",
-      "texto_link": "Clique para acessar o perfil do evento no Instagram",
+      "url_da_imagem": "https://drive.google.com/file/d/1OsxbDJ-yiPswlqwVoTHBdRnZm3Icb-UZ/view?usp=sharing",
       "evento_privado": true
     },
     {
@@ -14,8 +13,7 @@
       "data": "15/02/2024",
       "horario": "20:00",
       "preco": 40,
-      "link": "https://www.instagram.com",
-      "texto_link": "Clique para acessar o perfil do evento no Instagram",
+      "url_da_imagem": "https://drive.google.com/file/d/1cFtiEUCLD_duXWSB3RgDvi6Rv1h9laGi/view?usp=sharing",
       "evento_privado": false
     },
     {
@@ -23,8 +21,7 @@
       "data": "09/03/2024",
       "horario": "16:00",
       "preco": 0,
-      "link": "https://instagram.com",
-      "texto_link": "Clique para acessar o perfil do evento no Instagram",
+      "url_da_imagem": "https://drive.google.com/file/d/1rX2YZ_DuAHvhcbJyNbz9kfffxfrtolWn/view?usp=sharing",
       "evento_privado": true
     }
   ]
