@@ -5,15 +5,12 @@ import {
   Slogan,
   Eventos,
   EventosLista,
-  EventosItem,
-  EventoTitulo,
-  EventoImagem,
-  EventoDataHora,
 } from "./homepage.styles";
 import axios from "axios";
 
 import Cabecalho from "../../Cabecalho/cabecalho";
 import Rodape from "../../Rodape/rodape";
+import Card from "../../Card/card";
 
 function Homepage() {
   const [eventos, setEventos] = useState([]);
@@ -38,14 +35,14 @@ function Homepage() {
         <Eventos>
           <EventosLista>
             {eventos.map((evento, index) => (
-              <EventosItem key={index}>
-                <EventoTitulo>{evento.titulo}</EventoTitulo>
-                <EventoImagem src={evento.url_da_imagem} alt={evento.titulo} />
-                <br />
-                <EventoDataHora>
-                  Data e Hora: {evento.data} - {evento.horario}
-                </EventoDataHora>
-              </EventosItem>
+              <Card
+                key={index}
+                titulo={evento.titulo}
+                urlImagem={evento.url_da_imagem}
+                data={evento.data}
+                horario={evento.horario}
+                id={evento.id}
+              />
             ))}
           </EventosLista>
         </Eventos>
