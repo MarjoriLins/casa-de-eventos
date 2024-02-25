@@ -4,8 +4,9 @@ import Login from "./components/pages/Login/login.jsx";
 import ListaEventos from "./components/pages/ListaEventos/listaEventos.jsx";
 import Homepage from "./components/pages/Homepage/homepage.jsx";
 import DetalhesEvento from "./components/pages/DetalhesEvento/detalhesEvento.jsx";
-
 import Contato from "./components/pages/Contato/contato.jsx";
+
+import Exercicios from "./components/pages/Exercicios/exercicios.jsx";
 
 import "./index.css";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/admin" element={<ListaEventos />} />
         <Route path="/evento/:id" element={<DetalhesEvento />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/exercicios" element={<Exercicios />} />
       </Routes>
     </BrowserRouter>
   );
