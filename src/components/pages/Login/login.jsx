@@ -3,6 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
+import {
+  LoginContainer,
+  LoginContent,
+  LoginBox,
+  LoginTitle,
+  FormBox,
+  FormItem,
+  FormLabel,
+  FormInput,
+  FormButton,
+  Sidebar,
+  SidebarContainer,
+  LogoContainer,
+  Logo,
+  ErrorMessage,
+} from "./login.styles";
+
 const Login = () => {
   // Aqui ficam meus hooks, funções e etc..
 
@@ -33,24 +50,42 @@ const Login = () => {
   };
 
   return (
-    // Aqui entra o formulário de login
-    <div>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Nome"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Senha"
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
-      />
-      <button onClick={EfetuarLogin}>Entrar</button>
-      {erro && <p>{erro}</p>}
-    </div>
+    <LoginContainer>
+      <Sidebar>
+        <SidebarContainer>
+          <LogoContainer>
+            <Logo src="./img/logo.svg" alt="Logo da casa de festas" />
+          </LogoContainer>
+        </SidebarContainer>
+      </Sidebar>
+      <LoginContent>
+        <LoginBox>
+          <LoginTitle>Aréa de Login:</LoginTitle>
+          <FormBox>
+            <FormItem>
+              <FormLabel>Nome: </FormLabel>
+              <FormInput
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </FormItem>
+            <FormItem>
+              <FormLabel>Senha: </FormLabel>
+              <FormInput
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </FormItem>
+            <FormItem>
+              <FormButton onClick={EfetuarLogin}>Entrar</FormButton>
+            </FormItem>
+            {erro && <ErrorMessage>{erro}</ErrorMessage>}
+          </FormBox>
+        </LoginBox>
+      </LoginContent>
+    </LoginContainer>
   );
 };
 
