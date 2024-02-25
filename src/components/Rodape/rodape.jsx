@@ -5,9 +5,9 @@ const RodapeContainer = styled.div`
   height: 120px;
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   background-color: #1f0049;
-  color: #ffff;
+  color: #e2d8a5;
 `;
 
 const RodapeText = styled.p`

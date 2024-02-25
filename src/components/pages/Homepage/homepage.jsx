@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Container,
   Title,
@@ -15,6 +15,10 @@ import Card from "../../Card/card";
 function Homepage() {
   const [eventos, setEventos] = useState([]);
 
+  // Exemplo de useRef
+
+  const paragraphRef = useRef(null);
+
   useEffect(() => {
     const listarEventos = async () => {
       try {
@@ -26,6 +30,12 @@ function Homepage() {
     };
     listarEventos();
   });
+
+  const adicionarTexto = () => {
+    if (paragraphRef.current) {
+      paragraphRef.current.innerText += "Novo texto";
+    }
+  };
   return (
     <>
       <Cabecalho />
@@ -47,6 +57,9 @@ function Homepage() {
           </EventosLista>
         </Eventos>
       </Container>
+      <h1>Teste de useRef</h1>
+      <p ref={paragraphRef}> Aqui Vai Entrar o Texto!</p>
+      <button onClick={adicionarTexto}>Adicionar Texto</button>
       <Rodape />
     </>
   );

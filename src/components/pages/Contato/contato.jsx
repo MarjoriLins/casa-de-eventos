@@ -4,7 +4,9 @@ import Cabecalho from "../../Cabecalho/cabecalho";
 import Rodape from "../../Rodape/rodape";
 
 function Contato() {
+  // Aqui entrariam as funções JavaScript, Hooks e etc..
   return (
+    // Tudo que será exibido aqui será renderizado na tela
     <>
       <Cabecalho />
       <Container>
