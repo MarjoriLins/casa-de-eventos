@@ -1,4 +1,5 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef, useMemo, useCallback } from "react";
+import BotaoIncrementar from "../../BotaoIncrementar/botaoIncrementar";
 
 function Exercicios() {
   // Exemplo de useRef
@@ -11,13 +12,17 @@ function Exercicios() {
   // Exemplo de useMemo
 
   const [numero, setNumero] = useState(0);
-
   const calcularParOuImpar = (num) => {
     console.log("Calculando...");
     return num % 2 === 0 ? "par" : "impar";
   };
-
   const tipoNumero = useMemo(() => calcularParOuImpar(numero), [numero]);
+
+  // Exemplo de useCallback
+  const [count, setCount] = useState(0);
+  const incrementar = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
 
   return (
     <>
@@ -29,6 +34,9 @@ function Exercicios() {
         {numero} é um número {tipoNumero}
       </p>
       <button onClick={() => setNumero(numero + 1)}>Incrementar</button>
+      <h1>Exemplo de useCallback</h1>
+      <p>Contador: {count}</p>
+      <BotaoIncrementar incrementar={incrementar} />
     </>
   );
 }
