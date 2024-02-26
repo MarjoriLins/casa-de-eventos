@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   LoginContainer,
@@ -17,7 +19,6 @@ import {
   SidebarContainer,
   LogoContainer,
   Logo,
-  ErrorMessage,
 } from "./login.styles";
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
   // Aqui ficam minhas declarações de Hooks
   const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
+
   const navigate = useNavigate();
 
   // Função para consultar API e verificar se o login e senha estão corretos
@@ -42,7 +43,10 @@ const Login = () => {
       if (usuarioEncontrado) {
         navigate("/admin");
       } else {
-        setErro("Nome ou senha inválidos");
+        toast.error("Nome ou senha inválidos", {
+          position: "top-right",
+          autoClose: 5000,
+        });
       }
     } catch (error) {
       console.error("Erro ao buscar eventos", error);
@@ -83,7 +87,7 @@ const Login = () => {
             <FormItem>
               <FormButton onClick={EfetuarLogin}>Entrar</FormButton>
             </FormItem>
-            {erro && <ErrorMessage>{erro}</ErrorMessage>}
+            <ToastContainer />
           </FormBox>
         </LoginBox>
       </LoginContent>
