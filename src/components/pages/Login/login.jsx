@@ -60,12 +60,13 @@ const Login = () => {
       </Sidebar>
       <LoginContent>
         <LoginBox>
-          <LoginTitle>Aréa de Login:</LoginTitle>
+          <LoginTitle>Área de Login:</LoginTitle>
           <FormBox>
             <FormItem>
               <FormLabel>Nome: </FormLabel>
               <FormInput
                 type="text"
+                placeholder="Nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
               />
@@ -74,6 +75,7 @@ const Login = () => {
               <FormLabel>Senha: </FormLabel>
               <FormInput
                 type="password"
+                placeholder="Senha"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />
