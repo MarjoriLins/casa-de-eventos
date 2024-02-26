@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,10 +17,12 @@ import {
   Evento,
   EventoItem,
   BotaoRemover,
+  Listah2,
 } from "./listaEventos.styles";
 
 function ListaEventos() {
   const [eventos, setEventos] = useState([]);
+  const [filtroTitulo, setFiltoTitulo] = useState("");
 
   const excluirEvento = async (id) => {
     try {
@@ -50,11 +52,29 @@ function ListaEventos() {
     };
     listarEventos();
   });
+
+  const eventosFiltrados = useMemo(() => {
+    return eventos.filter((evento) => {
+      return evento.titulo.toLowerCase().includes(filtroTitulo.toLowerCase());
+    });
+  }, [eventos, filtroTitulo]);
+
+  const handleInputChange = (e) => {
+    setFiltoTitulo(e.target.value);
+  };
+
   return (
     <>
       <Cabecalho />
       <ListaContainer>
         <ListaTitulo>Lista de Eventos Cadastrados:</ListaTitulo>
+        <Listah2>Pesquisar:</Listah2>
+        <input
+          type="text"
+          placeholder="Pesquisar eventos"
+          value={filtroTitulo}
+          onChange={handleInputChange}
+        />
         <Tabela>
           <CabecalhoTabela>
             <CabecalhoLinha>
@@ -67,7 +87,7 @@ function ListaEventos() {
             </CabecalhoLinha>
           </CabecalhoTabela>
           <CorpoTabela>
-            {eventos.map((evento, index) => (
+            {eventosFiltrados.map((evento, index) => (
               <Evento key={index}>
                 <EventoItem>{evento.titulo}</EventoItem>
                 <EventoItem>

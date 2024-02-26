@@ -16,6 +16,14 @@ export const ListaTitulo = styled.h1`
   color: #1f0049;
 `;
 
+export const Listah2 = styled.h2`
+  font-family: "Playfair Display", serif;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1f0049;
+`;
+
 export const Tabela = styled.table`
   border-collapse: collapse;
   width: 100%;
