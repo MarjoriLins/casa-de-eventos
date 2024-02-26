@@ -6,6 +6,7 @@ export const ListaContainer = styled.div`
   min-height: calc(100vh - 240px);
   display: block;
   margin: auto;
+  justify-content: center;
 `;
 export const ListaTitulo = styled.h1`
   font-family: "Playfair Display", serif;
