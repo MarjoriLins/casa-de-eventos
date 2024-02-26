@@ -1,4 +1,4 @@
-# Sistema de Casas de Festas criado por meio das Aulas do Módulo Framework Front End II (React) - Start Coding Ada Tech |Turma 1025.
+# Sistema de Casas de Festas criado por meio das Aulas do Módulo Framework Front End II (React) - Start Coding Ada Tech | Turma 1025.
 
 # Professor Responsável: Roosevelt Franklin
 
@@ -23,7 +23,7 @@
 Clonar o projeto:
 
 ```sh
-git@github.com:MarjoriLins/casa-de-eventos.git
+git clone https://github.com/MarjoriLins/casa-de-eventos.git
 ```
 
 Entrar na página:
